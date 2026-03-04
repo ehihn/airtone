@@ -167,19 +167,19 @@
         <button data-wave="triangle">Tri</button>
       </div>
       <div class="fx-toggles">
-        <button id="reverb-btn">Reverb</button>
-        <button id="delay-btn">Delay</button>
+        <button id="reverb-btn" class="active">Reverb</button>
+        <button id="delay-btn" class="active">Delay</button>
       </div>
       <div class="osc-select">
-        <button class="active" data-osc="1">1 Osc</button>
+        <button data-osc="1">1 Osc</button>
         <button data-osc="2">2 Osc</button>
-        <button data-osc="3">3 Osc</button>
+        <button class="active" data-osc="3">3 Osc</button>
       </div>
       <div class="octave-select">
         <span class="oct-label">Oct</span>
-        <button data-oct="1">1</button>
+        <button class="active" data-oct="1">1</button>
         <button data-oct="2">2</button>
-        <button class="active" data-oct="3">3</button>
+        <button data-oct="3">3</button>
         <button data-oct="4">4</button>
         <button data-oct="5">5</button>
       </div>
@@ -215,11 +215,11 @@ let handLandmarker = null, lastVideoTime = -1;
 let audioCtx = null;
 let oscNode = null, filterNode = null, gainNode = null, analyser = null, analyserData = null;
 let lfoNode = null, lfoGain = null;
-let reverbEnabled = false, delayEnabled = false;
+let reverbEnabled = true, delayEnabled = true;
 let convolverNode = null, reverbGain = null, dryGainReverb = null;
 let delayNode = null, feedbackNode = null, delayGain = null, dryGainDelay = null;
-let octave = 3;
-let oscCount = 1;
+let octave = 1;
+let oscCount = 3;
 let oscNodes = [], lfoNodes = [], lfoGains = [];
 const oscDetunes = [0, -12, 12];
 
